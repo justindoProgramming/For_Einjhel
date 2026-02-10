@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person 💗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#050505] min-h-screen flex items-center justify-center overflow-hidden font-['Plus_Jakarta_Sans'] text-white">
+
+    <div id="ambient-layer" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <main class="relative z-20 w-full flex justify-center px-8">
+        
+        <section id="pin-stage" class="block w-full max-w-md animate-fade-in">
+            <div class="bg-white/5 backdrop-blur-3xl p-12 rounded-[3.5rem] shadow-[0_0_60px_rgba(255,175,204,0.15)] border border-white/10 text-center glass-hover">
+                <div class="mb-8">
+                    <div class="w-20 h-20 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
+                        <span class="text-3xl">🔐</span>
+                    </div>
+                    <h2 class="text-white font-bold text-2xl tracking-tight">Identity Verification</h2>
+                    <p class="text-gray-500 text-sm mt-2">Enter the secret code to unlock</p>
+                </div>
+                
+                <input type="password" maxlength="4" id="pin-input" 
+                       class="w-full py-5 text-center text-4xl tracking-[1.5rem] border-2 border-white/5 rounded-3xl focus:border-pink-500 focus:outline-none transition-all text-pink-500 font-bold bg-white/5 mb-8"
+                       placeholder="••••">
+                
+                <button onclick="checkPin()" class="w-full bg-pink-600 hover:bg-pink-500 text-white py-4 rounded-2xl font-semibold transition-all active:scale-95 shadow-lg shadow-pink-900/40 text-lg">
+                    Unlock Experience
+                </button>
+                <p id="pin-error" class="text-pink-400 text-xs mt-4 opacity-0 transition-opacity italic">That's not it, baby 🥺</p>
+            </div>
+        </section>
+
+        <section id="envelope-stage" class="hidden text-center cursor-pointer group animate-float">
+            <div onclick="openLetter()" class="bg-white/5 backdrop-blur-2xl p-16 rounded-[4rem] shadow-2xl border border-white/10 transition-all hover:scale-105 active:scale-95">
+                <img src="envelope.png" class="w-48 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(255,175,204,0.3)]" alt="Envelope">
+                <p class="text-pink-400 font-bold uppercase tracking-[0.4em] text-xs">Special Delivery</p>
+            </div>
+        </section>
+
+        <section id="letter-stage" class="hidden w-full max-w-6xl transition-all duration-1000">
+                <div class="w-full lg:w-1/2 flex flex-col items-center">
+                    <h1 id="main-title" class="font-['Dancing_Script'] text-6xl lg:text-7xl text-pink-400 mb-12 drop-shadow-glow text-center">Will you be my Valentine?</h1>
+                        <img src="cat_heart.gif" id="display-gif" class="max-h-full transition-all duration-700" alt="Cute Cat">
+                    </div>
+                </div>
+
+                <div id="interaction-zone" class="w-full lg:w-1/2 flex flex-col items-center justify-center gap-12 min-h-[450px] relative">
+                    
+                    <div id="btn-container" class="flex flex-row items-center gap-8">
+                        <button id="yesBtn" onclick="celebrate()" 
+                                class="bg-pink-600 hover:bg-pink-500 text-white px-16 py-6 rounded-full text-2xl font-bold tracking-widest shadow-[0_0_30px_rgba(219,39,119,0.4)] transition-all active:scale-90 z-50">
+                            YES
+                        </button>
+                        
+                        <button id="noBtn" 
+                                class="bg-white/5 backdrop-blur-lg border border-white/10 text-white/40 px-16 py-6 rounded-full text-2xl font-semibold tracking-widest transition-all duration-[450ms] cubic-bezier(0.23, 1, 0.32, 1) z-[100] hover:text-white hover:border-white/20">
+                            NO
+                        </button>
+                    </div>
+                    
+                    <div id="success-view" class="hidden space-y-8 animate-fade-in w-full overflow-y-auto max-h-[500px] pr-4 custom-scroll">
+                        <div class="rounded-[3rem] overflow-hidden shadow-2xl border-4 border-pink-500/30">
+                             <img src="c2e61f07-7835-4edb-9160-4eed96ac1273.jpg" class="w-full h-auto" alt="Our Special Moment">
+                        </div>
+                        <div class="border-t border-white/10 pt-8 space-y-6">
+                            <p class="text-gray-200 text-lg leading-relaxed">
+                                <span class="text-pink-400 font-bold block text-4xl mb-4">Yeheuuuuuy! ❤️</span>
+                                Let's be together forever, and eat each other HHAHAHAHAHAH! Since it’s valentine’s, I just want you to know na you’re not just my date, you’re my favorite person, my pahinga, and my safe place.
+                            </p>
+                            <div class="bg-pink-500/10 p-6 rounded-3xl border border-pink-500/20">
+                                <p class="text-pink-300 text-sm italic font-medium leading-relaxed italic">
+                                    "I promise to always be your peace, your biggest supporter, and the one who loves you more every single day. You're the best thing that ever happened to me, baby. I love you endlessly."
+                                </p>
+                            </div>
+                            <p class="text-gray-500 text-xs italic">Be my valentine this year ulit ha? and next years also. Naka-reserve ka na sakin by default 💗</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

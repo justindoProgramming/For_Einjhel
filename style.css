@@ -1,0 +1,41 @@
+/* Premium Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-30px) rotate(2deg); }
+}
+.animate-float { animation: float 5s infinite ease-in-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+
+/* Background Decoration */
+.ambient-glow {
+    position: absolute;
+    color: rgba(255, 175, 204, 0.15);
+    filter: blur(2px);
+    pointer-events: none;
+    animation: rain linear infinite;
+}
+
+@keyframes rain {
+    0% { transform: translateY(-10vh) scale(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(110vh) scale(1.5) rotate(360deg); opacity: 0; }
+}
+
+/* UI Polishing */
+.drop-shadow-glow { filter: drop-shadow(0 0 20px rgba(255, 175, 204, 0.5)); }
+.shadow-glow { box-shadow: 0 0 40px rgba(255, 175, 204, 0.2); }
+
+#noBtn {
+    will-change: transform;
+    margin: 0 !important;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar { width: 6px; }
+.custom-scroll::-webkit-scrollbar-track { background: transparent; }
+.custom-scroll::-webkit-scrollbar-thumb { background: rgba(255, 175, 204, 0.2); border-radius: 10px; }
